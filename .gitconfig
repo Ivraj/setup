@@ -1,0 +1,5 @@
+[alias]
+    s = status
+    co = checkout
+    l = log
+
