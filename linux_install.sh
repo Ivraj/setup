@@ -94,3 +94,38 @@ else
 fi
 
 echo "##### DONE #####"
+
+##############
+# i3 INSTALL #
+##############
+
+echo -n "Installing i3..."
+
+sudo apt-get -y install i3
+
+if [ "$?" -ne "0" ]; then
+    echo "failed."
+    return 1
+fi
+
+echo "Done."
+
+echo "NEED TO EDIT SCRIPT SO IT UPDATES i3 CONF"
+
+##################
+# VSCODE INSTALL #
+##################
+
+echo -n "Installing VSCode..."
+
+sudo apt-get -y install code
+
+if [ "$?" -ne "0" ]; then
+    echo "failed."
+    return 1
+fi
+
+echo "Done."
+
+echo "NEED TO EDIT SCRIPT SO IT UPDATES VSCODE CONF"
+
