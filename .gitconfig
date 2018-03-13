@@ -1,5 +1,10 @@
 [alias]
     s = status
     co = checkout
+    a = add
+    cm = commit
     l = log
 
+[user]
+	email = ivraj@msn.com
+	name = Ivraj
