@@ -16,6 +16,21 @@ else
     exit
 fi
 
+###############
+# NPM INSTALL #
+###############
+
+echo "##### Installing npm... #####"
+
+sudo apt-get -y install npm
+
+if [ "$?"-ne "0" ];then
+    echo "##### ERROR IN RUNNING sudo apt-get -y install npm #####"
+    exit
+fi
+
+echo "##### Done with installing npm #####"
+
 #######################
 # UPDATING GIT CONFIG #
 #######################
@@ -116,16 +131,16 @@ echo "NEED TO EDIT SCRIPT SO IT UPDATES i3 CONF"
 # VSCODE INSTALL #
 ##################
 
-echo -n "Installing VSCode..."
+#echo -n "Installing VSCode..."
 
-sudo apt-get -y install code
+#sudo apt-get -y install code
 
-if [ "$?" -ne "0" ]; then
-    echo "failed."
-    return 1
-fi
+#if [ "$?" -ne "0" ]; then
+    #echo "failed."
+    #return 1
+#fi
 
-echo "Done."
+#echo "Done."
 
-echo "NEED TO EDIT SCRIPT SO IT UPDATES VSCODE CONF"
+#echo "NEED TO EDIT SCRIPT SO IT UPDATES VSCODE CONF"
 
