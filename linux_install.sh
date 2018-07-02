@@ -16,6 +16,23 @@ else
     exit
 fi
 
+
+########################
+# .BASH_ALIASES UPDATE #
+########################
+
+echo "##### Overwriting .bash_aliases to ~/#####"
+
+cp -f .bash_aliases ~/.bash_aliases
+
+if [ "$?"-ne "0" ];then
+    echo "##### ERROR IN RUNNING cp -f .bash_aliases ~/.bash_aliases #####"
+    exit
+fi
+
+echo "##### Done with updating .bash_aliases #####"
+
+
 ###############
 # NPM INSTALL #
 ###############
