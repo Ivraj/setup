@@ -114,18 +114,18 @@ echo "##### DONE #####"
 # i3 INSTALL #
 ##############
 
-echo -n "Installing i3..."
+#echo -n "Installing i3..."
 
-sudo apt-get -y install i3
+#sudo apt-get -y install i3
 
-if [ "$?" -ne "0" ]; then
-    echo "failed."
-    return 1
-fi
+#if [ "$?" -ne "0" ]; then
+    #echo "failed."
+    #return 1
+#fi
 
-echo "Done."
+#echo "Done."
 
-echo "NEED TO EDIT SCRIPT SO IT UPDATES i3 CONF"
+#echo "NEED TO EDIT SCRIPT SO IT UPDATES i3 CONF"
 
 ##################
 # VSCODE INSTALL #
