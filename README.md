@@ -3,6 +3,7 @@ This repo sets up my working environment. Software that will be installed
 includes...
 
 - My git aliases
+- apt-fast
 - Vim (with my configuration)
 - Tmux (with my configuration)
 - gedit
@@ -14,3 +15,5 @@ The full installation also includes...
 
 - Firefox
 - i3
+
+TODO:

@@ -8,20 +8,34 @@ echo "##### Updating System... #####"
 
 sudo apt-get -y update
 
-OUT=$?
-if [ $OUT -eq 0 ];then
-    echo "##### Done with system update #####"
-else
+if [ "$?" -ne 0 ];then
     echo "##### ERROR IN RUNNING sudo apt-get -y update #####"
     exit
 fi
+
+echo "##### Done with system update #####"
+
+####################
+# APT-FAST INSTALL #
+####################
+
+sudo add-apt-repository ppa:saiarcot895/myppa
+sudo apt-get update
+sudo apt-get -y install apt-fast
+
+if [ "$?"-ne "0" ];then
+    echo "##### ERROR IN RUNNING sudo apt-get -y install apt-fast #####"
+    exit
+fi
+
+echo "##### Done with installing apt-fast #####"
 
 
 ########################
 # .BASH_ALIASES UPDATE #
 ########################
 
-echo "##### Overwriting .bash_aliases to ~/#####"
+echo "##### Overwriting .bash_aliases to ~/ #####"
 
 cp -f .bash_aliases ~/.bash_aliases
 
@@ -31,22 +45,6 @@ if [ "$?"-ne "0" ];then
 fi
 
 echo "##### Done with updating .bash_aliases #####"
-
-
-###############
-# NPM INSTALL #
-###############
-
-echo "##### Installing npm... #####"
-
-sudo apt-get -y install npm
-
-if [ "$?"-ne "0" ];then
-    echo "##### ERROR IN RUNNING sudo apt-get -y install npm #####"
-    exit
-fi
-
-echo "##### Done with installing npm #####"
 
 #######################
 # UPDATING GIT CONFIG #
@@ -62,6 +60,21 @@ else
     echo "##### ERROR IN RUNNING cp -f .gitconfig ~/.gitconfig #####"
     exit
 fi
+
+###############
+# NPM INSTALL #
+###############
+
+echo "##### Installing npm... #####"
+
+sudo apt-get -y install npm
+
+if [ "$?"-ne "0" ];then
+    echo "##### ERROR IN RUNNING sudo apt-get -y install npm #####"
+    exit
+fi
+
+echo "##### Done with installing npm #####"
 
 ###############
 # VIM INSTALL #
